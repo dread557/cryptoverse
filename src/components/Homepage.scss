@@ -1,0 +1,102 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    
+
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    .show-btn {
+        border: 0;
+        background: 0;
+    }
+
+    .general-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .general-stats-val {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 12px;
+
+            p:first-child {
+                color: #7d7c7c;
+            }
+
+            p:nth-child(2) {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .top-ten-crypto {
+        .top-ten-crypto-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .latest-news {
+
+        .latest-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .news-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 50px;
+        
+            .news-card {
+                display: flex;
+                background: white;
+                padding: 25px 15px;
+                flex-direction: column;
+                gap: 10px;
+        
+                .news-card-header {
+                    display: flex;
+                }
+
+                .card-footer {
+                    display: flex;
+                    justify-content: space-between;
+
+                    span {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+    }
+    }
+}
+
+@media screen and (max-width: 768px) {
+ 
+    .container .top-ten-crypto {
+        
+        .crypto-list{
+            grid-template-columns: 1fr
+        }
+    }
+
+    .container .latest-news {
+    
+        .news-list {
+            grid-template-columns: 1fr
+        }
+    }
+
+    h1 {
+            font-size: 1.5rem;
+            margin-bottom: none;
+    }
+}

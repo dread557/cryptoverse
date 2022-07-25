@@ -1,0 +1,56 @@
+.crypto-detail-container {
+
+
+    .cryto-detail-header {
+        text-align: center;
+    }
+
+    .crypto-detail-main {
+
+        .other-stats-grp{
+            display: flex;
+            gap: 25px;
+
+            .coin-stats {
+                display: flex;
+                justify-content: space-between;
+
+                .coin-stats-name {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                .stats {
+                    font-weight: bold;
+                }
+            }            
+        }
+        
+        .crypto-desc-link-grp {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+
+            .crypto-link {
+                
+                * {
+                    font-weight: bold;
+                }
+                .links {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .other-stats-grp {
+            flex-direction: column;
+    }
+    .crypto-desc-link-grp {
+        grid-template-columns: 1fr !important;
+    }
+}

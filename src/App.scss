@@ -1,0 +1,160 @@
+:root {
+  --text-primary: #000;
+  --bgPrimary: #fff;
+  --bgSecondary: #f9f9f9;
+  --pink: #0071bd;
+  --light-blue: #e6f7ff;
+  --border: #d9d9d9;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat',
+  sans-serif;
+}
+
+button:hover,
+a:hover {
+  cursor: pointer;
+}
+
+h1 {
+  color: var(--pink)!important;
+  font-weight: bold !important ;
+  font-family: 'EB Garamond',
+  serif !important;
+}
+
+.App {
+  display: flex;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: #000000D9;
+}
+
+.navbar {
+  width: 30%;
+  height: 100vh;
+  background-color: rgb(0, 21, 41);
+  position: fixed;
+  bottom: 0;
+  top: 0;
+
+  .navbar-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    .nav-logo-name-btn {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      .nav-logo-name {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .logo {
+          width: 50px;
+          height: 50px;
+        }
+
+        .name {
+          font-size: 2.1rem;
+          color: var(--pink);
+        }
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 40px;
+
+      a {
+        color: var(--light-blue);
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+
+        &:focus {
+          background-color: #0071bd;
+        }
+      }
+    }
+  }
+  .nav-menu-btn {
+    display: none;
+  }
+}
+
+.main {
+  width: 70%;
+  position: absolute;
+  right: 0;
+  z-index: -12;
+
+  .routes {
+    padding: 30px;
+    background-color: var(--bgSecondary);
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(0, 21, 41);
+    color: var(--light-blue);
+
+    .footer-nav {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+  .App {
+    flex-direction: column;
+
+    .main {
+      width: 100%;
+      top: 65px;
+    }
+
+    .footer-nav {
+          flex-direction: column;
+    }
+  }
+  
+  .navbar {
+    width: 100%;
+    height: initial;
+    bottom: unset;
+
+    .nav-menu-btn {
+      display: flex;
+      border: none;
+      background: transparent;
+      color: #fff;
+    }
+
+    .nav-links {
+      position: absolute;
+      right: 0;
+      background: rgb(0, 21, 41);
+      margin-top: 60px;
+      gap: 10px;
+    }
+  }
+
+}

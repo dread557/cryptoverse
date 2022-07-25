@@ -1,0 +1,67 @@
+.cryptocurrencies-container .search-crypto {
+  text-align: center;
+  margin: 30px;
+}
+
+.cryptocurrencies-container .search-crypto input {
+  padding: 6px;
+  border: 1px solid #cecece;
+}
+
+.cryptocurrencies-container .crypto-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.cryptocurrencies-container .crypto-list .crypto-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: white;
+}
+
+.cryptocurrencies-container .crypto-list .crypto-card .crypto-card-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #e7e3e3;
+  padding: 20px;
+}
+
+.cryptocurrencies-container .crypto-list .crypto-card .crypto-card-header .card-img {
+  width: 40px;
+  height: 40px;
+}
+
+.cryptocurrencies-container .crypto-list .crypto-card .crypto-card-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 25px 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .cryptocurrencies-container .crypto-list {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+/*# sourceMappingURL=Cryptocurrencies.css.map */

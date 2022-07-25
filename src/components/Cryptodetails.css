@@ -1,0 +1,68 @@
+.crypto-detail-container .cryto-detail-header {
+  text-align: center;
+}
+
+.crypto-detail-container .crypto-detail-main .other-stats-grp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+}
+
+.crypto-detail-container .crypto-detail-main .other-stats-grp .coin-stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.crypto-detail-container .crypto-detail-main .other-stats-grp .coin-stats .coin-stats-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.crypto-detail-container .crypto-detail-main .other-stats-grp .coin-stats .stats {
+  font-weight: bold;
+}
+
+.crypto-detail-container .crypto-detail-main .crypto-desc-link-grp {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.crypto-detail-container .crypto-detail-main .crypto-desc-link-grp .crypto-link * {
+  font-weight: bold;
+}
+
+.crypto-detail-container .crypto-detail-main .crypto-desc-link-grp .crypto-link .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .other-stats-grp {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .crypto-desc-link-grp {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+  }
+}
+/*# sourceMappingURL=Cryptodetails.css.map */
