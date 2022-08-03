@@ -3,16 +3,19 @@ import { useParams } from 'react-router-dom'
 import HTMLReactParser from 'html-react-parser';
 import millify from 'millify'
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
-import { useGetCryptoDetailsQuery } from '../services/cryptoApi'
+import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from '../services/cryptoApi'
 
 import Loader from './Loader'
 import './Cryptodetails.css'
+import LineChart from './LineChart';
 
 const Cryptodetails = () => {
     const { coinId } = useParams()
+    const [timePeriod, setTimePeriod] = useState('7d')
     const { data, isFetching } = useGetCryptoDetailsQuery(coinId)
+    const { data: coinHistory } = useGetCryptoHistoryQuery({ coinId, timePeriod })
     const cryptoDetails = data?.data?.coin;
-    console.log(data)
+    console.log({ coinHistory })
 
     const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
 
@@ -41,8 +44,17 @@ const Cryptodetails = () => {
             <select
                 name='history'
             >
-                {time.map((date) => <option key={date} value={date}>{date}</option>)}
+                {time.map((date) =>
+                    <option
+                        key={date}
+                        defaultValue='7d'
+                        placeholder='Select time period'
+                        onChange={(value) => setTimePeriod(value)}
+                    >
+                        {date}
+                    </option>)}
             </select>
+            <LineChart coinName={cryptoDetails.name} coinHistory={coinHistory} currentPrice={millify(cryptoDetails.price)} />
             <div className='crypto-detail-main'>
                 <div className='other-stats-grp'>
                     <div className='other-stats-info'>

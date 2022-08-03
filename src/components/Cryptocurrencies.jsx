@@ -22,13 +22,19 @@ const Cryptocurrencies = ({ simplified }) => {
         <div className='cryptocurrencies-container'>
             {!simplified && (
                 <div className='search-crypto'>
-                    <input type='text' placeholder='Search crypto' onChange={(e) => setSearchTerm(e.target.value)} />
+                    <input
+                        type='text'
+                        placeholder='Search crypto'
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+
+                    />
                 </div>
             )}
             <div className='crypto-list'>
                 {cryptos?.map((crypto) => (
-                    <Link to={`/crypto/${crypto.uuid}`}>
-                        <div className='crypto-card' key={crypto.id}>
+                    <Link to={`/crypto/${crypto.uuid}`} key={crypto.id}>
+                        <div className='crypto-card'>
                             <span className='crypto-card-header'>
                                 <p>{crypto.rank}. {crypto.name}</p>
                                 <img className='card-img' src={crypto.iconUrl} alt={crypto.name} />
